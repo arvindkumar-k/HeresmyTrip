@@ -14,7 +14,7 @@ class InputEvent extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="table table-xs ">
+        <div className="table table-sm ">
           <div className="row">
             {/* From DateTime  */}
             <DateTimeFormControl
