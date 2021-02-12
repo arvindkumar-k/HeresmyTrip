@@ -11,7 +11,7 @@ class DropDownFromControl extends Component {
               className="form-control"
               name={this.props.name}
               id={this.props.name}
-              placeholder="Car"
+              placeholder="Train"
               list={this.props.name + "_datalist"}
             />
             <datalist id={this.props.name + "_datalist"}>
