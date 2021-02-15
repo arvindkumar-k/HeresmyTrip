@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import DropDownFormControl from "./form_dropdown";
 import DateTimeFormControl from "./form_DateTime";
+import LocationFormControl from "./form_location";
 class InputEvent extends Component {
   state = {
     travelOptions: ["Car", "Flight", "Train", "Bus", "Bike", "Boat"],
     startDate: "",
     endDate: "",
     startTime: "",
+    location: {},
   };
   setFormInput = (fieldname, inputValue) => {
     this.setState({ [fieldname]: inputValue });
+  };
+  setLocation = (location) => {
+    this.setState({ location });
   };
   render() {
     return (
@@ -35,16 +40,22 @@ class InputEvent extends Component {
             ></DateTimeFormControl>
           </div>
           <div className="row">
-            {/* Mode of Travel */}
-            {this.props.eventType === "travel" && (
-              <DropDownFormControl
-                name="travelType"
-                dataList={this.state.travelOptions}
-                labelName="Mode of Travel"
-                dataListName="travelTypeDataList"
-                // altText="Please enter your mode of Travel"
-              />
-            )}
+            <div className="col-6">
+              {/* Mode of Travel */}
+              {this.props.eventType === "travel" && (
+                <DropDownFormControl
+                  name="travelType"
+                  dataList={this.state.travelOptions}
+                  labelName="Mode of Travel"
+                  dataListName="travelTypeDataList"
+                  // altText="Please enter your mode of Travel"
+                />
+              )}
+            </div>
+
+            <div className="col-6">
+              <LocationFormControl onPlaceLoaded={this.setLocation} />
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7a977a16-a1ce-4f3b-8975-fa01f96bfdb5/resourceGroups/Primary/providers/Microsoft.Web/sites/heresmytrip",
+    "appService.deploySubpath": "build"
+}

@@ -26,7 +26,7 @@ class DropDownFromControl extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="col-6 sm-6">
+        <div className="col-auto sm">
           <label htmlFor={this.props.name}>{this.props.labelName}</label>
           <DatePicker onChange={this.onChangeDate} />
           {this.props.includeTime && (

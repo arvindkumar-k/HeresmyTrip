@@ -4,7 +4,7 @@ class DropDownFromControl extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="col-sm-12">
+        <div className="col-sm-6">
           <div className="form-floating">
             <input
               type="text"
