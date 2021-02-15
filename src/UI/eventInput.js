@@ -54,7 +54,10 @@ class InputEvent extends Component {
             </div>
 
             <div className="col-6">
-              <LocationFormControl onPlaceLoaded={this.setLocation} />
+              <LocationFormControl
+                className=""
+                onPlaceLoaded={this.setLocation}
+              />
             </div>
           </div>
         </div>
