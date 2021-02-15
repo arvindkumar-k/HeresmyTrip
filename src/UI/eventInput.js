@@ -8,39 +8,59 @@ class InputEvent extends Component {
     startDate: "",
     endDate: "",
     startTime: "",
-    location: {},
+    fromLocation: {},
+    toLocation: {},
   };
   setFormInput = (fieldname, inputValue) => {
     this.setState({ [fieldname]: inputValue });
   };
-  setLocation = (location) => {
-    this.setState({ location });
-  };
+
   render() {
     return (
-      <div className="container-fluid">
-        <div className="table table-md">
-          <div className="row">
-            {/* From DateTime  */}
-            <DateTimeFormControl
-              name="startDate"
-              timeField="startTime"
-              includeTime={true}
-              onSave={this.setFormInput}
-              labelName="Start Date"
-            ></DateTimeFormControl>
-            {/* To DateTime  */}
-            <DateTimeFormControl
-              name="endDate"
-              includeTime={true}
-              timeField="endTime"
-              onSave={this.setFormInput}
-              labelName="End Date"
-              // altText="Enter the end date"
-            ></DateTimeFormControl>
-          </div>
-          <div className="row">
-            <div className="col-6">
+      <div className="container container-fluid">
+        <table className="table table-responsive">
+          <tr className="row">
+            <td className="col-md-6">
+              {/* From DateTime  */}
+              <DateTimeFormControl
+                name="startDate"
+                timeField="startTime"
+                includeTime={true}
+                onSave={this.setFormInput}
+                labelName="Start Date"
+              ></DateTimeFormControl>
+            </td>
+            <td className="col-md-6">
+              {/* To DateTime  */}
+              <DateTimeFormControl
+                name="endDate"
+                includeTime={true}
+                timeField="endTime"
+                onSave={this.setFormInput}
+                labelName="End Date"
+                // altText="Enter the end date"
+              ></DateTimeFormControl>
+            </td>
+          </tr>
+          <tr className="row">
+            <td className="col-md-6">
+              <LocationFormControl
+                labelName="To Location"
+                name="toLocation"
+                onPlaceLoaded={this.setFormInput}
+              />
+            </td>
+
+            <td className="col-md-6">
+              <LocationFormControl
+                labelName="From Location"
+                name="fromLocation"
+                onPlaceLoaded={this.setFormInput}
+              />
+            </td>
+          </tr>
+          <tr className="row">
+            <td className="col-md-6">
               {/* Mode of Travel */}
               {this.props.eventType === "travel" && (
                 <DropDownFormControl
@@ -51,16 +71,12 @@ class InputEvent extends Component {
                   // altText="Please enter your mode of Travel"
                 />
               )}
-            </div>
-
-            <div className="col-6">
-              <LocationFormControl
-                className=""
-                onPlaceLoaded={this.setLocation}
-              />
-            </div>
-          </div>
-        </div>
+            </td>
+          </tr>
+          <tr className="row">
+            <td className="col-md-6"></td>
+          </tr>
+        </table>
       </div>
     );
   }

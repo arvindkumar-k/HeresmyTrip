@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+table {
+  border-style :none;
+  border-color : firebrick;
+ 
+}
+tr {
+  border-style: none;
+}

@@ -25,10 +25,17 @@ class DropDownFromControl extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="col-auto sm">
+      <div>
+        <td className="col-md-3">
           <label htmlFor={this.props.name}>{this.props.labelName}</label>
-          <DatePicker onChange={this.onChangeDate} />
+        </td>
+        <td className="col-md-4">
+          <DatePicker
+            onChange={this.onChangeDate}
+            placeholder={this.props.label}
+          />
+        </td>
+        <td className="col-md-4">
           {this.props.includeTime && (
             <TimePicker
               onChange={this.onChangeTime}
@@ -37,13 +44,13 @@ class DropDownFromControl extends Component {
             />
           )}
 
-          {this.props.altText && (
+          {/* {this.props.altText && (
             <div id={this.props.name + "_altText"} className="form-text">
               {this.props.altText}
             </div>
-          )}
-        </div>
-      </React.Fragment>
+          )} */}
+        </td>
+      </div>
     );
   }
 }

@@ -21,13 +21,13 @@ class SearchBar extends React.Component {
   handlePlaceChanged() {
     const place = this.autocomplete.getPlace();
     console.log(place);
-    this.props.onPlaceLoaded(place);
+    this.props.onPlaceLoaded(this.props.name, place);
   }
 
   render() {
     return (
       <React.Fragment>
-        <div className="col-sm-12">
+        <div className="col-xs-12">
           <div className="form-floating">
             <input
               className="form-control"
@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
               id="autocompleteLocation"
               type="text"
             ></input>
-            <label htmlFor="autocompleteLocation">Location</label>
+            <label htmlFor="autocompleteLocation">{this.props.labelName}</label>
           </div>
         </div>
       </React.Fragment>
