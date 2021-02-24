@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class DropDownFromControl extends Component {
+  handleChange = (event) => {
+    this.props.onSave(event.target.name, event.target.value);
+  };
   render() {
     return (
       <React.Fragment>
@@ -10,9 +13,9 @@ class DropDownFromControl extends Component {
               type="text"
               className="form-control"
               name={this.props.name}
-              id={this.props.name}
               placeholder="Train"
               list={this.props.name + "_datalist"}
+              onChange={this.handleChange}
             />
             <datalist id={this.props.name + "_datalist"}>
               {this.props.dataList.map((item) => {
