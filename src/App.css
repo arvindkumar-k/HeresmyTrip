@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+tbody,thead,tr,td,table {
+  border-style: none;
+}
+
